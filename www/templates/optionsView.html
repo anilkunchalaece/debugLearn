@@ -1,0 +1,16 @@
+<ion-view>
+<div class="bar bar-header bar-balanced">
+  <h1 class="title">Alphabetz</h1>
+	<button class="button icon ion-gear-a" ng-click="goToSettings()"></button>
+</div>
+	<ion-content class="has-header letterBox">
+
+			<div class="row" ng-repeat="letterList in alphabet">
+					<div class="col-25 button" ng-click="letterClick(letterList[0])" ng-if="letterList[0]" ng-class="getClass($index,1)"> {{letterList[0]}}</div>
+					<div class="col-25 button" ng-click="letterClick(letterList[1])" ng-if="letterList[1]" ng-class="getClass($index,2)"> {{letterList[1]}}</div>
+					<div class="col-25 button" ng-click="letterClick(letterList[2])" ng-if="letterList[2]" ng-class="getClass($index,3)">{{letterList[2]}}</div>
+					<div class="col-25 button" ng-click="letterClick(letterList[3])" ng-if="letterList[3]" ng-class="getClass($index,4)">{{letterList[3]}}</div>
+			</div>
+	
+	</ion-content>
+</ion-view>

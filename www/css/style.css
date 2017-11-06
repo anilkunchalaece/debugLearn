@@ -1,0 +1,22 @@
+#video-bg {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0px;
+  z-index: -1;
+}
+
+
+#video-bg2 {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0px;
+  z-index: 25;
+  height: 100%;
+  width: 100%;
+}
+
+.canvasBtn {
+  z-index: 200;
+}
