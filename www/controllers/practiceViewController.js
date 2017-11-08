@@ -1,11 +1,16 @@
-app.controller('practiceViewController', function($scope, $state, $stateParams,$rootScope) {
+app.controller('practiceViewController', function($scope, $state, $stateParams,$rootScope,$ionicPlatform) {
 
-  var canvasVar = document.getElementById('canvasId');
-  var canvasCx = canvasVar.getContext('2d');
-  i = 0;
   var recvChar = $stateParams.char
-  if(recvChar != null)
-    setupCanvas(recvChar)
+  if(recvChar != null){
+    ionic.DomUtil.ready(function() {
+        document.addEventListener("deviceready", function() {
+             canvasVar = document.getElementById("canvasId");
+             canvasCx = canvasVar.getContext('2d');
+            setupCanvas($stateParams.char)
+        }, false);
+    });
+        
+  }
 
   function setupCanvas(character) {
     canvasVar.height = window.innerHeight;
@@ -15,16 +20,16 @@ app.controller('practiceViewController', function($scope, $state, $stateParams,$
     canvasCx.strokeStyle = 'rgb(0, 0, 50)';
     canvasCx.font = 'bold 25em helvetica';
     canvasCx.fillStyle = 'rgb(255, 0, 0)';
-    canvasCx.textBaseline = 'middle';
+    //canvasCx.textBaseline = 'middle';
     drawletter(character);
   }
 
   function drawletter(char) {
     //making letter a global variable - not the right way :) dirty solution
-    letter = char;
-    centerx = (canvasVar.width - canvasCx.measureText(letter).width) / 2;
+    console.log(char)
+    centerx = (canvasVar.width - canvasCx.measureText(char).width) / 2;
     centery = canvasVar.height / 2;
-    canvasCx.fillText(letter, centerx, centery);
+    canvasCx.fillText(char,centerx,centery)
   } //end of draw letter
 
   $scope.nextLetter = function() {

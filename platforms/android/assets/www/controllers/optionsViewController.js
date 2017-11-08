@@ -1,10 +1,9 @@
 app.controller('optionsViewController', function($scope, $state, $rootScope,$stateParams) {
 
 
-  var list1 = ['a','b','c','d','e','f','g','h','i','j','k','i','l','m','n','o','p','q','r','s','t','u','u','v','a','b','c','d','e','f','g','h','i','j','k','i','l','m','n','o','p','q','r','s','t','u','u','v']
+  var list1 = ['a','b','c','d','e','f']
   var list2 = ['a','b','c','d','e','f','g','h','i','j','k','i','l','m','n','o','p','q','r','s','t','u','u','v','a','b','c','d','e','f','g','h','i','j','k','i','l','m','n','o','p','q','r','s','t','u','u','v'];
  
-
   $rootScope.selectRecv = $stateParams.select
 
   if ($rootScope.selectRecv == 'A') {
